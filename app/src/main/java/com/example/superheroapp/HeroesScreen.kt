@@ -37,7 +37,6 @@ fun HeroItem(
         ) {
             Row (
                 modifier = Modifier.fillMaxWidth(),
-
             ) {
                 Column(modifier = Modifier.weight(2f)) {
                     Text(
