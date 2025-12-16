@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.MaterialTheme
@@ -41,6 +42,7 @@ fun HeroItem(
             Column(
                 modifier = Modifier
                     .height(72.dp)
+                    .weight(1f)
             ) {
                 Text(
                     text = stringResource(hero.nameRes),
@@ -52,8 +54,7 @@ fun HeroItem(
                 )
             }
             Spacer(modifier = Modifier
-                .weight(1f)
-                .padding(start = 16.dp)
+                .width(16.dp)
             )
             Image(
                 painter = painterResource(hero.imageRes),
@@ -66,16 +67,15 @@ fun HeroItem(
         }
     }
 }
-
 @Preview
 @Composable
 fun HeroItemPreview() {
     SuperHeroAppTheme {
         HeroItem(
             hero = Hero(
-                R.string.hero1,
-                R.string.description1,
-                R.drawable.android_superhero1
+                nameRes = com.example.superheroapp.R.string.hero4,
+                descriptionRes = com.example.superheroapp.R.string.description4,
+                imageRes = com.example.superheroapp.R.drawable.android_superhero4
             )
         )
     }
